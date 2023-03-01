@@ -59,35 +59,35 @@ const mainScience = async() =>{
     // console.log(json);
     let ihtml = '';
     if(navbar.classList.contains("navdarkmode")){
-    for(let items in json.data){
-            ihtml += `<div class="card carddark" style="width: 18rem;">
-        <a href='${json.data[items].readMoreUrl} target="__blank"><img src="${json.data[items].imageUrl}" class="card-img-top"></a>
-        <div class="card-body cardbodydark">
-                     <h5 class="card-title">${json.data[items].title}</h5>
-                     <p class="time" style="font-weight:lighter; font-size: smaller; color: grey">${json.data[items].time}</p>
-                     <p class="card-text" style="font-size: small">${json.data[items].content}</p>
-                     <p class="card-text" style="font-style: italic">An article by <span style="font-weight: bold;">${json.data[items].author}</span></p>
-                     <a href="${json.data[items].readMoreUrl}" class="btn btndark" target="__blank">Read More</a>
-                 </div>
-             </div>`
+        for(let items in json.data){
+                ihtml += `<div class="card carddark" style="width: 18rem;">
+            <a href='${json.data[items].readMoreUrl} target='_blank'><img src="${json.data[items].imageUrl}" class="card-img-top"></a>
+            <div class="card-body cardbodydark">
+                         <h5 class="card-title">${json.data[items].title}</h5>
+                         <p class="time" style="font-weight:lighter; font-size: smaller; color: grey">${json.data[items].time}</p>
+                         <p class="card-text" style="font-size: small">${json.data[items].content}</p>
+                         <p class="card-text" style="font-style: italic">An article by <span style="font-weight: bold;">${json.data[items].author}</span></p>
+                         <a href="${json.data[items].readMoreUrl}" class="btn btndark" target="_blank">Read More</a>
+                     </div>
+                 </div>`
+            }
         }
-    }
-        else{
-            for(let items in json.data){
-            ihtml += `<div class="card" style="width: 18rem;">
-        <a href='${json.data[items].readMoreUrl} target="__blank"><img src="${json.data[items].imageUrl}" class="card-img-top"></a>
-        <div class="card-body">
-                     <h5 class="card-title">${json.data[items].title}</h5>
-                     <p class="time" style="font-weight:lighter; font-size: smaller; color: grey">${json.data[items].time}</p>
-                     <p class="card-text" style="font-size: small">${json.data[items].content}</p>
-                     <p class="card-text" style="font-style: italic">An article by <span style="font-weight: bold;">${json.data[items].author}</span></p>
-                     <a href="${json.data[items].readMoreUrl}" class="btn" target="__blank">Read More</a>
-                 </div>
-             </div>`
+            else{
+                for(let items in json.data){
+                ihtml += `<div class="card" style="width: 18rem;">
+            <a href='${json.data[items].readMoreUrl} target='_blank'><img src="${json.data[items].imageUrl}" class="card-img-top"></a>
+            <div class="card-body">
+                         <h5 class="card-title">${json.data[items].title}</h5>
+                         <p class="time" style="font-weight:lighter; font-size: smaller; color: grey">${json.data[items].time}</p>
+                         <p class="card-text" style="font-size: small">${json.data[items].content}</p>
+                         <p class="card-text" style="font-style: italic">An article by <span style="font-weight: bold;">${json.data[items].author}</span></p>
+                         <a href="${json.data[items].readMoreUrl}" class="btn" target="_blank">Read More</a>
+                     </div>
+                 </div>`
+            }
+            
         }
-        
-    }
-    cardContainer.innerHTML = ihtml;  
+        cardContainer.innerHTML = ihtml;
 }
 
 
@@ -490,7 +490,6 @@ entertainment.addEventListener("click", function entertainmentClickHandler(){
     mainEntertainment();
 });
 science.addEventListener("click", function scienceClickHandler(){
-
     mainScience();
 });
 
